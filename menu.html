@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Menu Bong Bóng</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#a8edea,#fed6e3);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding:50px 0;
+}
+
+
+.menu {
+  width:1000px;
+  border-radius:40px;
+  background: rgba(255,255,255,0.2);
+  border:1px solid rgba(255,255,255,0.4);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25),0 0 50px rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px) saturate(180%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding:50px;
+  display:flex;
+  flex-direction: column;
+}
+
+
+.menu-title {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding:15px 30px;
+  border-radius:30px;
+  background: rgba(255,255,255,0.3);
+  border:1px solid rgba(255,255,255,0.5);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2),0 0 20px rgba(255,255,255,0.4);
+  color:#fff;
+  text-shadow:0 1px 3px rgba(0,0,0,0.5);
+  font-size:36px;
+  margin-bottom:40px;
+  cursor:pointer;
+}
+.menu-title span:first-child { transition: transform 0.5s ease; display:block; }
+.menu-title span:last-child { position:absolute; top:100%; left:0; width:100%; transition: transform 0.5s ease; display:block; }
+.menu-title:hover span:first-child { transform:translateY(-100%); }
+.menu-title:hover span:last-child { transform:translateY(-100%); }
+
+
+.items {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+  flex-grow:1;
+}
+
+
+.item {
+  background: rgba(255,255,255,0.25);
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25),0 0 15px rgba(255,255,255,0.3);
+  border:1px solid rgba(255,255,255,0.4);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  overflow:hidden;
+  transition:0.4s;
+  position:relative;
+}
+.item:hover { transform:translateY(-7px) scale(1.03); }
+
+.image-slider { display:flex; width:100%; flex-shrink:0; transition: transform 0.5s linear; }
+.image-slider img { width:100%; border-radius:20px; flex-shrink:0; margin-bottom:12px; }
+.item:hover .image-slider { animation: slide 8s infinite linear; }
+@keyframes slide { 0% {transform:0} 12.5% {transform:translateX(-100%)} 25% {transform:translateX(-200%)} 37.5% {transform:translateX(-300%)} 50% {transform:translateX(-400%)} 62.5% {transform:translateX(-500%)} 75% {transform:translateX(-600%)} 87.5% {transform:translateX(-700%)} 100% {transform:translateX(0);} }
+
+.item h3 { margin:12px 0 6px; font-size:22px; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5); }
+.item p { margin:6px 0; font-size:18px; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5); }
+.price { font-weight:bold; color:#ffeb3b; font-size:18px; text-shadow:0 1px 2px rgba(0,0,0,0.5); }
+
+
+.bottom-boxes {
+  display:flex;
+  justify-content:space-between;
+  margin-top:40px;
+  gap:20px;
+}
+
+
+.bottom-box {
+  background: rgba(255,255,255,0.25);
+  border:1px solid rgba(255,255,255,0.5);
+  border-radius:25px;
+  padding:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+  backdrop-filter: blur(12px) saturate(180%);
+  width:32%;
+  color:#fff;
+  display:flex;
+  flex-direction: column;
+  gap:15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.5s ease;
+}
+.bottom-box:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow:0 15px 35px rgba(0,0,0,0.3), 0 0 25px rgba(255,255,255,0.4);
+  filter: brightness(1.2);
+}
+.bottom-box a { color:#fff; text-decoration:underline; font-weight:bold; }
+.bottom-box h4 { margin:0 0 5px; font-size:16px; font-weight:bold; }
+.bottom-box p { margin:0; font-size:14px; line-height:1.4; }
+
+</style>
+</head>
+<body>
+<div class="menu">
+  <h2 class="menu-title">
+    <span style="color: #667a79;">🍽️ MENU</span>
+    <span><b style="color: #667a79;">chất lượng hàng đầu Việt Nam</b></span>
+  </h2>
+
+  <div class="items">
+    <!-- 8 MÓN ĂN -->
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x300.png?text=Phở+1">
+        <img src="https://via.placeholder.com/400x300.png?text=Phở+2">
+      </div>
+      <h3>Phở Bò</h3>
+      <p class="price">50,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x250.png?text=Bún+Chả+1">
+        <img src="https://via.placeholder.com/400x250.png?text=Bún+Chả+2">
+      </div>
+      <h3>Bún Chả</h3>
+      <p class="price">45,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x280.png?text=Cơm+Gà+1">
+        <img src="https://via.placeholder.com/400x280.png?text=Cơm+Gà+2">
+      </div>
+      <h3>Cơm Gà</h3>
+      <p class="price">55,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x220.png?text=Bánh+Mì+1">
+        <img src="https://via.placeholder.com/400x220.png?text=Bánh+Mì+2">
+      </div>
+      <h3>Bánh Mì</h3>
+      <p class="price">20,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x260.png?text=Gỏi+Cuốn+1">
+        <img src="https://via.placeholder.com/400x260.png?text=Gỏi+Cuốn+2">
+      </div>
+      <h3>Gỏi Cuốn</h3>
+      <p class="price">25,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x280.png?text=Bún+Bò+1">
+        <img src="https://via.placeholder.com/400x280.png?text=Bún+Bò+2">
+      </div>
+      <h3>Bún Bò Huế</h3>
+      <p class="price">55,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x300.png?text=Cơm+Tấm+1">
+        <img src="https://via.placeholder.com/400x300.png?text=Cơm+Tấm+2">
+      </div>
+      <h3>Cơm Tấm</h3>
+      <p class="price">50,000₫</p>
+    </div>
+    <div class="item">
+      <div class="image-slider">
+        <img src="https://via.placeholder.com/400x240.png?text=Bánh+Xèo+1">
+        <img src="https://via.placeholder.com/400x240.png?text=Bánh+Xèo+2">
+      </div>
+      <h3>Bánh Xèo</h3>
+      <p class="price">40,000₫</p>
+    </div>
+  </div>
+
+  <div class="bottom-boxes">
+    <div class="bottom-box">
+      <h4 style="color:#24a182;font-weight: bold;font-size: 22px;">🌟 Slogan:</h4>
+      <p style="color:#2ddaa6;font-weight: bold;font-size: 20px;">“Chất lượng món ăn là ưu tiên hàng đầu”</p>
+      <h4 style="color:#30302e;font-weight: bold;font-size: 22px;">🔗 Liên kết:</h4>
+      <p><a href="https://guide.michelin.com/vn/en/restaurants" style="color: #7cdf9a; font-size: 18px;" target="_blank"><i>đạt chuẩn michelin</i></a></p>
+    </div>
+    <div class="bottom-box">
+      <h4 style="color:#465554;font-weight: bold;font-size: 22px;">📍 Địa chỉ:</h4>
+      <p style="color: rgb(62, 240, 240);font-weight: bold;font-size: 20px">Phenikaa-P.Nguyễn Trác, Yên Nghĩa, Hà Đông, Hà Nội</p>
+      <p style="color: #6593ac;font-weight: bold;font-size: 20px;">Hotline: 6677 3508</p>
+    </div>
+    <div class="bottom-box">
+      <p style="color: #6593ac; text-align: center; font-weight: bold; font-size: 21px;">Nếu có phản hồi về thực đơn xin nhấp vào đường link:<br>(<a
+                href="https://www.facebook.com/TP.BaKa" style="color: rgb(66, 247, 238); font-size: 27px;">~Gió~</a>)</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
